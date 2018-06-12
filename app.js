@@ -41,19 +41,20 @@ Call the countdown function and pass it two arguments: a number to countdown fro
 let words = ['Money','On','My','Mind','Today'];
 getWords = () => {
     console.log(words[0]);
+    setTimeout(() => {
+        console.log(words[1]);
+    }, 2000);
+    
+    setTimeout(() => {
+        console.log(words[2]);
+    }, 0);
+
+
     console.log(words[4]);
 }
 getWords();
 
-setTimeout(() => {
-    console.log(words[1]);
-}, 2000);
 
-setTimeout(() => {
-    console.log(words[2]);
-}, 0);
-
-setTimeout();
 
 
 
