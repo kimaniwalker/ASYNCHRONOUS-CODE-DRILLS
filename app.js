@@ -59,11 +59,11 @@ getWords(); */
 function countdown(num, callback) {
     var num;
     for (; num >= 1; num--) {
-        setTimeout(() => {      
+        setTimeout(() => {
         }, 5000);
         console.log(num);
         let count2 = num;
-            callback(count2);
+        callback(count2);
     }
 
     done();
