@@ -13,3 +13,7 @@ messageMultiplied = () => {
     console.log(msg * 4);
 }
 messageMultiplied();
+
+setTimeout(() => {
+    messageMultiplied();
+}, 2000);
