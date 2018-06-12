@@ -3,7 +3,7 @@
 // Create another function that will log the result of multiplying the global variable multiplied by 4
 // Create a setTimeout function that will call the second function you created after 2 seconds
 
-let msg = 5
+/* let msg = 5
 message = () => {
     console.log(msg);
 }
@@ -16,7 +16,7 @@ messageMultiplied();
 
 setTimeout(() => {
     messageMultiplied();
-}, 2000);
+}, 2000); */
 
 /* Callbacks
 
@@ -38,13 +38,13 @@ Create another function called done that will log a message to the console
 The countdown function should countdown from the number you passed it and when it gets to 1 it should return the result of the callback function
 
 Call the countdown function and pass it two arguments: a number to countdown from and the callback function */
-let words = ['Money','On','My','Mind','Today'];
+/* let words = ['Money', 'On', 'My', 'Mind', 'Today'];
 getWords = () => {
     console.log(words[0]);
     setTimeout(() => {
         console.log(words[1]);
     }, 2000);
-    
+
     setTimeout(() => {
         console.log(words[2]);
     }, 0);
@@ -52,7 +52,35 @@ getWords = () => {
 
     console.log(words[4]);
 }
-getWords();
+getWords(); */
+
+/* let num = 1; */
+
+function countdown(num, callback) {
+    var num;
+    for (; num >= 1; num--) {
+        setTimeout(() => {      
+        }, 5000);
+        console.log(num);
+        let count2 = num;
+            callback(count2);
+    }
+
+    done();
+}
+
+
+done = () => {
+    console.log('done');
+}
+
+
+
+countdown(10, (result) => {
+    console.log(`This is my ${result}`)
+});
+
+
 
 
 
