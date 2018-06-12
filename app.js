@@ -55,12 +55,12 @@ getWords = () => {
 getWords(); */
 
 /* let num = 1; */
-
+setTimeout(() => {
 function countdown(num, callback) {
     var num;
     for (; num >= 1; num--) {
-        setTimeout(() => {
-        }, 5000);
+        
+        
         console.log(num);
         let count2 = num;
         callback(count2);
@@ -68,8 +68,6 @@ function countdown(num, callback) {
 
     done();
 }
-
-
 done = () => {
     console.log('done');
 }
@@ -79,6 +77,9 @@ done = () => {
 countdown(10, (result) => {
     console.log(`This is my ${result}`)
 });
+}, 5000);
+
+
 
 
 
