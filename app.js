@@ -59,7 +59,7 @@ getWords(); */
 
 
 
-function countdown(num, callback) {
+/* function countdown(num, callback) {
 
     let sec = setInterval(function(){
         console.log(num);
@@ -84,7 +84,7 @@ result = () => {
 
 
 
-countdown(10,result);
+countdown(10,result); */
 
 //PROMISES
 
@@ -112,33 +112,34 @@ let food = true;
 let err = 'ERROR';
 
 
-let orderingChickenSandwich = new Promise(function(Resolve,Reject){
-    
-if (food === true) {
+let orderingChickenSandwich = new Promise(function (Resolve, Reject) {
 
-let sandwhich = {
-    sandwhich:'chicken',
-    vegtables:'veggies' }
+    if (food === true) {
 
-Resolve(sandwhich);    
+        let sandwhich = {
+            sandwhich: 'chicken',
+            vegtables: 'veggies'
+        }
 
-} else
- {
-console.log(err)
-}
-Reject(err);
+        Resolve(sandwhich);
+
+    } else {
+        console.log(err)
+    }
+    Reject(err);
 
 });
 
 let orderFood = orderingChickenSandwich;
 
-orderFood.then(function(Resolve){
-console.log(Resolve);
+orderFood.then(function (Resolve) {
+    console.log(Resolve);
 },
-(err) => {console.log(err);
+    (err) => {
+        console.log(err);
 
-orderFood();
-});
+        orderFood();
+    });
 
 /* Chaining Promises
 
@@ -148,12 +149,43 @@ Then return the result multiplied by 2
 Then return the new result multiplied by 4
 Then return the new result multiplied by 6 */
 
-let number = 1;
-let num = new Promise(function(Resolve,Reject){
-    setTimeout(() => {
-        Resolve(number);
 
-    }, 2000);
+let num = 1;
 
+chaining = () => {
 
-})
+    return new Promise((resolve) => {
+
+        setTimeout(function () {
+
+            resolve(num)
+
+        }, 1000)
+
+    }).then((result) => {
+
+        console.log(result);
+
+        return result * 2;
+
+    }).then((result) => {
+
+        setTimeout(() => console.log(result), 2000)
+
+        return result * 4;
+
+    }).then((result) => {
+
+        setTimeout(() => console.log(result), 2500)
+
+        return result * 6;
+
+    }).then((result) => {
+
+        setTimeout(() => console.log(result), 3000);
+
+    });
+
+}
+
+chaining();
