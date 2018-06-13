@@ -86,15 +86,74 @@ result = () => {
 
 countdown(10,result);
 
+//PROMISES
+
+/* Promises
+
+Create a global variable and set it equal to true or false
+
+Create a new promise named orderingChickenSandwich
+
+If the global variable is true, create an object with two properties (key/value pair): 
+sandwich : chicken
+veggies: lettuce
+Resolve the object
+
+If the global variable is false, create a variable and set it equal to a new Error
+
+Reject this new variable
+
+Create a new function named orderFood that will call the promise you made and console log the result if the promise is fulfilled or if it is rejected
+
+Call the orderFood function */
 
 
+let food = true;
+let err = 'ERROR';
 
 
+let orderingChickenSandwich = new Promise(function(Resolve,Reject){
+    
+if (food === true) {
+
+let sandwhich = {
+    sandwhich:'chicken',
+    vegtables:'veggies' }
+
+Resolve(sandwhich);    
+
+} else
+ {
+console.log(err)
+}
+Reject(err);
+
+});
+
+let orderFood = orderingChickenSandwich;
+
+orderFood.then(function(Resolve){
+console.log(Resolve);
+},
+(err) => {console.log(err);
+
+orderFood();
+});
+
+/* Chaining Promises
+
+Create a new promise that will resolve the number 1 after 2 seconds
+
+Then return the result multiplied by 2
+Then return the new result multiplied by 4
+Then return the new result multiplied by 6 */
+
+let number = 1;
+let num = new Promise(function(Resolve,Reject){
+    setTimeout(() => {
+        Resolve(number);
+
+    }, 2000);
 
 
-
-
-
-
-
-
+})
