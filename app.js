@@ -55,29 +55,40 @@ getWords = () => {
 getWords(); */
 
 /* let num = 1; */
-setTimeout(() => {
+
+
+
+
 function countdown(num, callback) {
-    var num;
-    for (; num >= 1; num--) {
-        
-        
+
+    let sec = setInterval(function(){
         console.log(num);
-        let count2 = num;
-        callback(count2);
-    }
+        
+        if (num <=1) {
+            clearInterval(sec);
+            return callback();
+        }
+        num--
+    },1000)
 
-    done();
+
+
 }
-done = () => {
-    console.log('done');
+result = () => {
+    console.log(' I am done');
+
+
+
 }
 
 
 
-countdown(10, (result) => {
-    console.log(`This is my ${result}`)
-});
-}, 5000);
+
+countdown(10,result);
+
+
+
+
 
 
 
